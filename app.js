@@ -8,9 +8,13 @@ const app= express();
 app.use(bodyParser.urlencoded());
 app.use(express.json());
     
+app.get('/',async(req,res)=>{
+    res.send("Welcome. To access the endpoint, go to ratexchangez.herokuapp.com/api/rates?base={}$currency={}, using base and currency as query parameters")
+})
+    
  app.get('/api/rates',async(req,res)=>{
-    const base=req.query.base;
-    const currency=req.query.currency;
+    const base=req.query.base.toUpperCase();
+    const currency=req.query.currency.toUpperCase();
     try{
     if(!base || ! currency){
         return res.json({Error: "Base and currency fields are required"})
