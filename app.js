@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded());
 app.use(express.json());
     
 app.get('/',async(req,res)=>{
-    res.send("Welcome. To access the endpoint, go to ratexchangez.herokuapp.com/api/rates?base={}$currency={}, using base and currency as query parameters")
+    res.send("Welcome. To access the endpoint, go to https://ratexchangez.herokuapp.com/api/rates?base={}$currency={}, using base and currency as query parameters")
 })
     
  app.get('/api/rates',async(req,res)=>{
